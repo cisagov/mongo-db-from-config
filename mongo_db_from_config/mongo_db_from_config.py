@@ -7,9 +7,9 @@ def db_from_config(config_filename):
     """Create a MongoClient database connection from a YAML config file.
 
     Sample config file:
-    [production]
-    database-uri = mongodb://username:password@localhost:27017/auth-db-name
-    database-name = db-name
+    database:
+      uri: mongodb://username:password@localhost:27017/auth-db-name
+      name: db-name
 
     Parameters
     ----------
