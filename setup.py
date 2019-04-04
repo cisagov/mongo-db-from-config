@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 setup module for mongo-db-from-config
 
