@@ -8,7 +8,7 @@ def db_from_config(config_filename):
 
     Sample config file:
     [production]
-    database-uri = mongodb://username:pasword@localhost:27017/auth-db-name
+    database-uri = mongodb://username:password@localhost:27017/auth-db-name
     database-name = db-name
 
     Parameters
