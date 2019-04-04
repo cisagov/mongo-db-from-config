@@ -26,7 +26,7 @@ def db_from_config(config_filename):
         # The loader must now be explicitly specified to avoid a
         # warning message.  See here for more details:
         # https://github.com/yaml/pyyaml/wiki/PyYAML-yaml.load(input)-Deprecation
-        config = yaml.load(stream, Loader=yaml.FullLoader)
+        config = yaml.load(stream, Loader=yaml.SafeLoader)
 
     if config is not None:
         try:
