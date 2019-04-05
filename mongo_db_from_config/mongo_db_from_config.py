@@ -1,8 +1,3 @@
-# third-party libraries (install with pip)
-from pymongo import MongoClient
-import yaml
-
-
 def db_from_config(config_filename):
     """Create a MongoClient database connection from a YAML config file.
 
@@ -20,6 +15,10 @@ def db_from_config(config_filename):
     -------
     mongokit.database.Database: The Mongo database connection
     """
+    # third-party libraries (install with pip)
+    from pymongo import MongoClient
+    import yaml
+
     db = None
 
     with open(config_filename, "r") as stream:
