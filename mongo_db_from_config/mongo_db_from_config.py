@@ -1,6 +1,8 @@
+"""This module contains the mongo_db_from_config code."""
+
+
 def db_from_config(config_filename):
-    """Given the name of the YAML file containing the configuration
-    information, return a corresponding MongoDB connection.
+    """Given a YAML file, return a corresponding MongoDB connection.
 
     Sample config file:
     database:
@@ -25,6 +27,7 @@ def db_from_config(config_filename):
 
     KeyError: If the YAML in the database configuration file is valid YAML
     but does not contain the expected keys
+
     """
     # third-party libraries (install with pip)
     from pymongo import MongoClient
