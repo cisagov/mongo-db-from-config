@@ -3,12 +3,11 @@
 from typing import Dict
 
 # Third-Party Libraries
-from pymongo import MongoClient
-from pymongo.database import Database
+import pymongo
 import yaml
 
 
-def db_from_config(config_filename: str) -> Database:
+def db_from_config(config_filename: str) -> pymongo.database.Database:
     """Given a YAML file, return a corresponding MongoDB connection.
 
     Sample config file:
@@ -45,6 +44,6 @@ def db_from_config(config_filename: str) -> Database:
     db_uri: str = config["database"]["uri"]
     db_name: str = config["database"]["name"]
 
-    db_connection: MongoClient = MongoClient(host=db_uri, tz_aware=True)
+    db_connection: pymongo.MongoClient = pymongo.MongoClient(host=db_uri, tz_aware=True)
 
     return db_connection[db_name]

@@ -1,0 +1,4 @@
+---
+database:
+  uri: mongodb://cisa_user:hunter2@server.cisa.gov:8421/testing
+  name: test-db

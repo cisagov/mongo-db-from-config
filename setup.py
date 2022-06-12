@@ -96,7 +96,9 @@ setup(
             # 1.11.1 fixed this issue, but to ensure expected behavior we'll pin
             # to never grab the regression version.
             "coveralls != 1.11.0",
+            "mongomock",
             "pre-commit",
+            "pyfakefs",
             "pytest-cov",
             "pytest",
         ]
