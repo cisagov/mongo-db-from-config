@@ -29,7 +29,7 @@ def db_from_config(config_filename):
     but does not contain the expected keys
 
     """
-    # third-party libraries (install with pip)
+    # Third-Party Libraries
     from pymongo import MongoClient
     import yaml
 
