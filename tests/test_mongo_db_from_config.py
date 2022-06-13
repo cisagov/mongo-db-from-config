@@ -38,7 +38,7 @@ def test_db_from_config_bad_yaml_no_database_entry():
 
 
 def test_db_from_config_bad_yaml_no_db_uri():
-    """Test that YAML parsing fails due to a missing database uri entry."""
+    """Test that YAML parsing fails due to a missing database URI entry."""
     with pytest.raises(KeyError) as e_info:
         db_connection = mongo_db_from_config.db_from_config(
             "no_database_uri_configuration.yml"
@@ -50,7 +50,7 @@ def test_db_from_config_bad_yaml_no_db_uri():
 
 
 def test_db_from_config_bad_yaml_no_db_name():
-    """Test that YAML parsing failes due to a missing database name entry."""
+    """Test that YAML parsing fails due to a missing database name entry."""
     with pytest.raises(KeyError) as e_info:
         db_connection = mongo_db_from_config.db_from_config(
             "no_database_name_configuration.yml"

@@ -38,7 +38,7 @@ def pytest_collection_modifyitems(config, items):
 
 @pytest.fixture(autouse=True)
 def test_fs(request, fs):
-    """Set up the contents of the fake fillesystem."""
+    """Set up the contents of the fake filesystem."""
     fs.add_real_file(
         os.path.join(request.fspath.dirname, TEST_CONFIGURATION),
         target_path="good_configuration.yml",
