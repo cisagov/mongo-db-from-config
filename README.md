@@ -1,8 +1,10 @@
 # mongo-db-from-config ⚙️ #
 
-[![Build Status](https://travis-ci.com/cisagov/mongo-db-from-config.svg?branch=develop)](https://travis-ci.com/cisagov/mongo-db-from-config)
+[![GitHub Build Status](https://github.com/cisagov/mongo-db-from-config/workflows/build/badge.svg)](https://github.com/cisagov/mongo-db-from-config/actions)
+[![Coverage Status](https://coveralls.io/repos/github/cisagov/mongo-db-from-config/badge.svg?branch=develop)](https://coveralls.io/github/cisagov/mongo-db-from-config?branch=develop)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/cisagov/mongo-db-from-config.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/mongo-db-from-config/alerts/)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/cisagov/mongo-db-from-config.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/mongo-db-from-config/context:python)
+[![Known Vulnerabilities](https://snyk.io/test/github/cisagov/mongo-db-from-config/develop/badge.svg)](https://snyk.io/test/github/cisagov/mongo-db-from-config)
 
 This is a small utility library that can be used to easily create a MongoDB
 connection based on the data in a simple YAML configuration file.
@@ -11,7 +13,7 @@ connection based on the data in a simple YAML configuration file.
 
 Run the following `pip` command to install this package:
 
-```bash
+```console
 pip install https://github.com/cisagov/mongo-db-from-config/tarball/develop
 ```
 
@@ -37,12 +39,12 @@ db = db_from_config("my_db_config.yml")
 
 ## Contributing ##
 
-We welcome contributions!  Please see [here](CONTRIBUTING.md) for
+We welcome contributions!  Please see [`CONTRIBUTING.md`](CONTRIBUTING.md) for
 details.
 
 ## License ##
 
-This project is in the worldwide [public domain](LICENSE.md).
+This project is in the worldwide [public domain](LICENSE).
 
 This project is in the public domain within the United States, and
 copyright and related rights in the work worldwide are waived through
