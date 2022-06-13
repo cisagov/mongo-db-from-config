@@ -39,13 +39,17 @@ def pytest_collection_modifyitems(config, items):
 @pytest.fixture(autouse=True)
 def test_fs(request, fs):
     """Set up the contents of the fake filesystem."""
+    # Add the base configuration that complies with the expected schema
     fs.add_real_file(
         os.path.join(request.fspath.dirname, TEST_CONFIGURATION),
         target_path="good_configuration.yml",
     )
+
+    # Load the known good configuration as a base to create the failing configurations
     with open("good_configuration.yml", "r") as good_config:
         base_config = yaml.load(good_config, Loader=yaml.SafeLoader)
 
+    # Create a test configuration file with no "database" map
     no_database_entry_config = copy.deepcopy(base_config)
     del no_database_entry_config["database"]
     fs.create_file(
@@ -53,6 +57,7 @@ def test_fs(request, fs):
         contents=yaml.dump(no_database_entry_config, explicit_start=True),
     )
 
+    # Create a test configuration file with a missing "uri" key in the "database" map
     no_database_uri_entry_config = copy.deepcopy(base_config)
     del no_database_uri_entry_config["database"]["uri"]
     fs.create_file(
@@ -60,6 +65,7 @@ def test_fs(request, fs):
         contents=yaml.dump(no_database_uri_entry_config, explicit_start=True),
     )
 
+    # Create a test configuration file with a missing "name" key in the "database" map
     no_database_name_entry_config = copy.deepcopy(base_config)
     del no_database_name_entry_config["database"]["name"]
     fs.create_file(
