@@ -35,7 +35,7 @@ def db_from_config(config_filename: str) -> pymongo.database.Database:
     but does not contain the expected keys
 
     """
-    with open(config_filename, "r") as stream:
+    with open(config_filename) as stream:
         # The loader must now be explicitly specified to avoid a
         # warning message.  See here for more details:
         # https://github.com/yaml/pyyaml/wiki/PyYAML-yaml.load(input)-Deprecation

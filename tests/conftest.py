@@ -46,7 +46,7 @@ def test_fs(request, fs):
     )
 
     # Load the known good configuration as a base to create the failing configurations
-    with open("good_configuration.yml", "r") as good_config:
+    with open("good_configuration.yml") as good_config:
         base_config = yaml.load(good_config, Loader=yaml.SafeLoader)
 
     # Create a test configuration file with no "database" map
