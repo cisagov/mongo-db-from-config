@@ -1,4 +1,5 @@
 """This module contains the mongo_db_from_config code."""
+
 # Standard Python Libraries
 from typing import Dict
 
