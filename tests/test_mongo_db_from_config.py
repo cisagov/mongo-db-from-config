@@ -1,5 +1,5 @@
-#!/usr/bin/env pytest -vs
 """Tests for mongo_db_from_config."""
+
 # Standard Python Libraries
 import os
 
