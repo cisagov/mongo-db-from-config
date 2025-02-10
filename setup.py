@@ -109,7 +109,10 @@ setup(
         "test": [
             "coverage",
             "coveralls",
-            "mongomock",
+            # mongomock started using importlib.metadata (added in Python 3.8)
+            # in version 4.2.0.  Since we must support Python 3.7 for now we
+            # must pin mongomock.
+            "mongomock<4.2.0",
             "pre-commit",
             "pyfakefs",
             "pytest-cov",
