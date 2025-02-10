@@ -90,7 +90,11 @@ setup(
     package_dir={"": "src"},
     py_modules=[splitext(basename(path))[0] for path in glob("src/*.py")],
     include_package_data=True,
-    install_requires=["pymongo>=3.7.2,<4.9", "PyYAML>=5.1", "setuptools >= 24.2.0"],
+    install_requires=[
+        "pymongo>=3.7.2,<4.9",
+        "PyYAML>=5.1",
+        "setuptools",
+    ],
     extras_require={
         # IMPORTANT: Keep type hinting-related dependencies of the dev section
         # in sync with the mypy pre-commit hook configuration (see
