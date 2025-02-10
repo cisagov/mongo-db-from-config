@@ -97,7 +97,7 @@ setup(
         # field of the mypy pre-commit hook to avoid discrepancies in type
         # checking between environments.
         "dev": [
-            "types-docopt",
+            "types-PyYAML",
             "types-setuptools",
         ],
         "test": [
