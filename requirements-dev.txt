@@ -3,4 +3,3 @@
 ipython
 mypy
 semver
-types-PyYAML
