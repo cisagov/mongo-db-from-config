@@ -91,6 +91,9 @@ setup(
     py_modules=[splitext(basename(path))[0] for path in glob("src/*.py")],
     include_package_data=True,
     install_requires=[
+        # Version 4.9 introduces the pymongo.synchronous and
+        # pymongo.asynchronous namespaces, which are incompatible with this
+        # code.  Furthermore, version 4.11 drops support for MongoDB 3.6.
         "pymongo>=3.7.2,<4.9",
         "PyYAML>=5.1",
         "setuptools",
