@@ -80,6 +80,7 @@ setup(
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
         "Programming Language :: Python :: Implementation :: CPython",
     ],
     python_requires=">=3.7",
@@ -88,22 +89,37 @@ setup(
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     py_modules=[splitext(basename(path))[0] for path in glob("src/*.py")],
-    install_requires=["pymongo>=3.7.2", "PyYAML>=5.1", "setuptools >= 24.2.0"],
+    include_package_data=True,
+    install_requires=[
+        # Version 4.9 introduces the pymongo.synchronous and
+        # pymongo.asynchronous namespaces, which are incompatible with this
+        # code.  Furthermore, version 4.11 drops support for MongoDB 3.6.
+        "pymongo>=3.7.2,<4.9",
+        "PyYAML>=5.1",
+        "setuptools",
+    ],
     extras_require={
+        # IMPORTANT: Keep type hinting-related dependencies of the dev section
+        # in sync with the mypy pre-commit hook configuration (see
+        # .pre-commit-config.yaml). Any changes to type hinting-related
+        # dependencies here should be reflected in the additional_dependencies
+        # field of the mypy pre-commit hook to avoid discrepancies in type
+        # checking between environments.
+        "dev": [
+            "types-PyYAML",
+            "types-setuptools",
+        ],
         "test": [
             "coverage",
-            # coveralls 1.11.0 added a service number for calls from
-            # GitHub Actions. This caused a regression which resulted in a 422
-            # response from the coveralls API with the message:
-            # Unprocessable Entity for url: https://coveralls.io/api/v1/jobs
-            # 1.11.1 fixed this issue, but to ensure expected behavior we'll pin
-            # to never grab the regression version.
-            "coveralls != 1.11.0",
-            "mongomock",
+            "coveralls",
+            # mongomock started using importlib.metadata (added in Python 3.8)
+            # in version 4.2.0.  Since we must support Python 3.7 for now we
+            # must pin mongomock.
+            "mongomock<4.2.0",
             "pre-commit",
             "pyfakefs",
             "pytest-cov",
             "pytest",
-        ]
+        ],
     },
 )

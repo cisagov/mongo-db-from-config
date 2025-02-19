@@ -1,5 +1,5 @@
+--editable .[dev]
 --requirement requirements-test.txt
 ipython
 mypy
 semver
-types-PyYAML
