@@ -94,7 +94,7 @@ setup(
         # Version 4.9 introduces the pymongo.synchronous and
         # pymongo.asynchronous namespaces, which are incompatible with this
         # code.  Furthermore, version 4.11 drops support for MongoDB 3.6.
-        "pymongo>=3.7.2,<4.9",
+        "pymongo>=3.7.2,<4.16",
         "PyYAML>=5.1",
         "setuptools",
     ],
