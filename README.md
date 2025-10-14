@@ -3,7 +3,6 @@
 [![GitHub Build Status](https://github.com/cisagov/mongo-db-from-config/workflows/build/badge.svg)](https://github.com/cisagov/mongo-db-from-config/actions)
 [![CodeQL](https://github.com/cisagov/mongo-db-from-config/workflows/CodeQL/badge.svg)](https://github.com/cisagov/mongo-db-from-config/actions/workflows/codeql-analysis.yml)
 [![Coverage Status](https://coveralls.io/repos/github/cisagov/mongo-db-from-config/badge.svg?branch=develop)](https://coveralls.io/github/cisagov/mongo-db-from-config?branch=develop)
-[![Known Vulnerabilities](https://snyk.io/test/github/cisagov/mongo-db-from-config/develop/badge.svg)](https://snyk.io/test/github/cisagov/mongo-db-from-config)
 
 This is a small utility library that can be used to easily create a MongoDB
 connection based on the data in a simple YAML configuration file.
