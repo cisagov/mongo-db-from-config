@@ -75,9 +75,6 @@ test = [
     "pytest",
 ]
 
-[project.scripts]
-example = "example.example:main"
-
 [project.urls]
 homepage = "https://github.com/cisagov/mongo-db-from-config"
 issues = "https://github.com/cisagov/mongo-db-from-config/issues"
