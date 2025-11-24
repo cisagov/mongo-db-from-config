@@ -75,6 +75,9 @@ test = [
     "pyfakefs",
     "pytest-cov",
     "pytest",
+    # This is a hidden dependency of mongomock, and it is not
+    # otherwise present under Python 3.12 and later.
+    "setuptools; python_version >= '3.12'",
 ]
 
 [project.urls]
