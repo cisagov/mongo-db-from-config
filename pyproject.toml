@@ -42,7 +42,6 @@ dependencies = [
     # 3.6.
     "pymongo>=3.7.2,<4.9",
     "PyYAML>=5.1",
-    "setuptools",
 ]
 description = "Create a Mongo database connection from a YAML config file"
 dynamic = ["readme", "version"]
@@ -64,7 +63,6 @@ requires-python = ">=3.7"
 # checking between environments.
 dev = [
     "types-PyYAML",
-    "types-setuptools",
 ]
 test = [
     "coverage",
