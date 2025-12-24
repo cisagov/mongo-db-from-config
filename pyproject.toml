@@ -56,7 +56,7 @@ dependencies = [
 description = "Create a Mongo database connection from a YAML config file"
 dynamic = ["readme", "version"]
 keywords = ["config", "mongo", "yaml"]
-# Although PEP 639 allows us to specify teh license via a simple SPDX
+# Although PEP 639 allows us to specify the license via a simple SPDX
 # string, the versions of setuptools we have to use for Python 3.7 and
 # 3.8 do not allow this; hence, this antiquated format from the
 # deprecated PEP 621.
