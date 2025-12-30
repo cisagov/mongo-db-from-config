@@ -1,8 +1,5 @@
 """This module contains the mongo_db_from_config code."""
 
-# Standard Python Libraries
-from typing import Dict
-
 # Third-Party Libraries
 import pymongo
 import yaml
@@ -40,7 +37,7 @@ def db_from_config(config_filename: str) -> pymongo.database.Database:
         # The loader must now be explicitly specified to avoid a
         # warning message.  See here for more details:
         # https://github.com/yaml/pyyaml/wiki/PyYAML-yaml.load(input)-Deprecation
-        config: Dict[str, Dict[str, str]] = yaml.load(stream, Loader=yaml.SafeLoader)
+        config: dict[str, dict[str, str]] = yaml.load(stream, Loader=yaml.SafeLoader)
 
     db_uri: str = config["database"]["uri"]
     db_name: str = config["database"]["name"]
