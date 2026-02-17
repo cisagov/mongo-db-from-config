@@ -94,8 +94,12 @@ test = [
     "pytest-cov",
     "pytest",
     # This is a hidden dependency of mongomock, and it is not
-    # otherwise present under Python 3.12 and later.
-    "setuptools; python_version >= '3.12'",
+    # installed by default under Python 3.12 and later.
+    #
+    # The versions of mongomock that we allow make use of
+    # pkg_resources, which was removed in setuptools>=82, so this is
+    # the reason for the upper bound pin.
+    "setuptools<82",
 ]
 
 [project.urls]
