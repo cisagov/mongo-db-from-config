@@ -99,7 +99,7 @@ test = [
     # The versions of mongomock that we allow make use of
     # pkg_resources, which was removed in setuptools>=82, so this is
     # the reason for the upper bound pin.
-    "setuptools<82",
+    "setuptools<83",
 ]
 
 [project.urls]
