@@ -57,7 +57,7 @@ dependencies = [
     # this code.  Furthermore, version 4.11 drops support for MongoDB
     # 3.6.
     "pymongo>=3.7.2,<4.9",
-    "PyYAML>=5.1",
+    "PyYAML>=6.0.3",
 ]
 description = "Create a Mongo database connection from a YAML config file"
 dynamic = ["readme", "version"]
