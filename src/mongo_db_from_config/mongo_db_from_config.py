@@ -37,10 +37,7 @@ def db_from_config(config_filename: str) -> pymongo.database.Database:
 
     """
     with open(config_filename) as stream:
-        # The loader must now be explicitly specified to avoid a
-        # warning message.  See here for more details:
-        # https://github.com/yaml/pyyaml/wiki/PyYAML-yaml.load(input)-Deprecation
-        config: Dict[str, Dict[str, str]] = yaml.load(stream, Loader=yaml.SafeLoader)
+        config: Dict[str, Dict[str, str]] = yaml.safe_load(stream)
 
     db_uri: str = config["database"]["uri"]
     db_name: str = config["database"]["name"]
